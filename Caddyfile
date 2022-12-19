@@ -1,0 +1,8 @@
+{
+	acme_dns alidns {
+		access_key_id xxx # replace by ali access_key
+		access_key_secret xxx # replace by ali access_secret
+	}
+}
+
+# domains config below

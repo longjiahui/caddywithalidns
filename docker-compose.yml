@@ -1,0 +1,16 @@
+version: '3'
+services:
+  caddy:
+    build:
+      context: .
+      dockerfile: ./caddywithalidns.dockerfile
+    network_mode: host
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./config:/config
+      - ./data:/data
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 3s
+        window: 60s
